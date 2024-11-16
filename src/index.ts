@@ -11,9 +11,9 @@ const port = process.env.PORT || 3000;
 // Lista de orígenes permitidos
 const allowedOrigins = [
   "http://localhost:4200",
-  "https:www.netlify.com/",
-  "https://tekball-softvergara-921597.netlify.app/",
-  "https://netlify.app/",
+  "https://www.netlify.com",
+  "https://tekball-softvergara-921597.netlify.app",
+  "https://netlify.app",
 ];
 
 // Configuración de CORS
@@ -27,6 +27,9 @@ const corsOptions: cors.CorsOptions = {
       callback(new Error("No autorizado por CORS"));
     }
   },
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true 
 };
 
 // Usa el middleware CORS
@@ -36,14 +39,6 @@ app.get("/api", (req, res) => {
   res.json({ message: "API funcionando correctamente." });
 });
 
-/* app.use(
-  cors({
-    origin: "http://localhost:4200",
-    methods: "GET,POST,PUT,DELETE,OPTIONS",
-    allowedHeaders: "Content-Type,Authorization",
-  })
-); */
-
 app.use(bodyParser.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/challenge", challengeRoutes);
@@ -51,7 +46,7 @@ app.use("/api/challenge", challengeRoutes);
 initializeConfigFile()
   .then(() => {
     app.listen(port, () => {
-      console.log(`Server running on port:${port}`);
+      console.log(`Server running on port: ${port}`);
     });
   })
   .catch((error) => {

@@ -6,7 +6,7 @@ import { initializeConfigFile } from "./utils/file.utils";
 const cors = require("cors");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT ?? 3000;
 
 app.use(
   cors({
@@ -19,7 +19,7 @@ app.use(
 app.use(
   cors({
     origin: "https://tekball-softvergara-921597.netlify.app/",
-    methods: "GET,POST,PUT,DELETE,OPTIONS",
+    methods: "GET,POST,OPTIONS",
     allowedHeaders: "Content-Type,Authorization",
   })
 );

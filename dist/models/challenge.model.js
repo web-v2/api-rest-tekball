@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getResultsByUser = exports.addResult = exports.saveResults = exports.getResults = void 0;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const path_1 = __importDefault(require("path"));
-const filePath = path_1.default.join(__dirname, '../../Results.json');
+const filePath = path_1.default.join(__dirname, "../db/results.json");
 const getResults = () => __awaiter(void 0, void 0, void 0, function* () {
     return yield fs_extra_1.default.readJSON(filePath);
 });
@@ -32,6 +32,6 @@ const addResult = (result) => __awaiter(void 0, void 0, void 0, function* () {
 exports.addResult = addResult;
 const getResultsByUser = (usuario) => __awaiter(void 0, void 0, void 0, function* () {
     const results = yield (0, exports.getResults)();
-    return results.filter(result => result.usuario === usuario);
+    return results.filter((result) => result.usuario === usuario);
 });
 exports.getResultsByUser = getResultsByUser;

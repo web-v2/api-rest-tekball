@@ -17,7 +17,7 @@ const fs_extra_1 = __importDefault(require("fs-extra"));
 const uuid_1 = require("uuid");
 const path_1 = __importDefault(require("path"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const filePath = path_1.default.join(__dirname, '../../config.json');
+const filePath = path_1.default.join(__dirname, "../db/users.json");
 const saltRounds = 10;
 const getUsers = () => __awaiter(void 0, void 0, void 0, function* () {
     return yield fs_extra_1.default.readJSON(filePath);
@@ -38,6 +38,6 @@ const addUser = (username, password) => __awaiter(void 0, void 0, void 0, functi
 exports.addUser = addUser;
 const findUserByUsername = (username) => __awaiter(void 0, void 0, void 0, function* () {
     const users = yield (0, exports.getUsers)();
-    return users.find(user => user.username === username);
+    return users.find((user) => user.username === username);
 });
 exports.findUserByUsername = findUserByUsername;

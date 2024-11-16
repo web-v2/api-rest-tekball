@@ -12,14 +12,28 @@ export const saveChallengeResult = async (
   n_fallidos: number,
   totalPuntos: number
 ): Promise<void> => {
-  const fechaHora = new Date().toISOString(); // Obtener la fecha y hora actual
+  const getFechaHoraBogota = (): string => {
+    const fechaActual = new Date();
+    const opciones: Intl.DateTimeFormatOptions = {
+      timeZone: "America/Bogota",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    };
+    return new Intl.DateTimeFormat("es-CO", opciones).format(fechaActual);
+  };
+
   const result: ChallengeResult = {
     id,
     usuario,
     n_aciertos,
     n_fallidos,
     totalPuntos,
-    fechaHora,
+    fechaHora: getFechaHoraBogota(),
   };
   await addResult(result);
 };

@@ -1,0 +1,34 @@
+[
+    {
+        "id": "06164ce0-3585-4819-9d26-6ef82f80d4df",
+        "usuario": "usuario1",
+        "n_aciertos": 5,
+        "n_fallidos": 5,
+        "totalPuntos": 65,
+        "fechaHora": "16/11/2024, 16:23:15"
+    },
+    {
+        "id": "b83e93cd-3d9e-4172-907b-a10ac6031e9b",
+        "usuario": "usuario2",
+        "n_aciertos": 7,
+        "n_fallidos": 3,
+        "totalPuntos": 88,
+        "fechaHora": "16/11/2024, 16:23:32"
+    },
+    {
+        "id": "e3542a21-c4f7-40f4-8e92-10af4eb1399c",
+        "usuario": "usuario3",
+        "n_aciertos": 8,
+        "n_fallidos": 2,
+        "totalPuntos": 95,
+        "fechaHora": "16/11/2024, 16:23:40"
+    },
+    {
+        "id": "1f10b4a2-f6d3-4ab1-982b-0a76101fd7b4",
+        "usuario": "usuario4",
+        "n_aciertos": 7,
+        "n_fallidos": 3,
+        "totalPuntos": 82,
+        "fechaHora": "16/11/2024, 16:23:51"
+    }
+]

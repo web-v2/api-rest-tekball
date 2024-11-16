@@ -1,8 +1,8 @@
-import path from 'path';
-import fs from 'fs-extra';
+import path from "path";
+import fs from "fs-extra";
 
-const filePathConfig = path.join(__dirname, '../../config.json');
-const filePathResults = path.join(__dirname, '../../Results.json');
+const filePathConfig = path.join(__dirname, "../db/users.json");
+const filePathResults = path.join(__dirname, "../db/results.json");
 
 export const initializeConfigFile = async () => {
   if (!(await fs.pathExists(filePathConfig))) {

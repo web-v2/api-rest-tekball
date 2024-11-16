@@ -15,8 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.initializeConfigFile = void 0;
 const path_1 = __importDefault(require("path"));
 const fs_extra_1 = __importDefault(require("fs-extra"));
-const filePathConfig = path_1.default.join(__dirname, '../../config.json');
-const filePathResults = path_1.default.join(__dirname, '../../Results.json');
+const filePathConfig = path_1.default.join(__dirname, "../db/users.json");
+const filePathResults = path_1.default.join(__dirname, "../db/results.json");
 const initializeConfigFile = () => __awaiter(void 0, void 0, void 0, function* () {
     if (!(yield fs_extra_1.default.pathExists(filePathConfig))) {
         yield fs_extra_1.default.writeJSON(filePathConfig, []);

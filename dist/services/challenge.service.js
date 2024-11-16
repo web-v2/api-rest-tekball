@@ -12,14 +12,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchResultsByUser = exports.fetchAllResults = exports.saveChallengeResult = void 0;
 const challenge_model_1 = require("../models/challenge.model");
 const saveChallengeResult = (id, usuario, n_aciertos, n_fallidos, totalPuntos) => __awaiter(void 0, void 0, void 0, function* () {
-    const fechaHora = new Date().toISOString(); // Obtener la fecha y hora actual
+    const getFechaHoraBogota = () => {
+        const fechaActual = new Date();
+        const opciones = {
+            timeZone: "America/Bogota",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false,
+        };
+        return new Intl.DateTimeFormat("es-CO", opciones).format(fechaActual);
+    };
     const result = {
         id,
         usuario,
         n_aciertos,
         n_fallidos,
         totalPuntos,
-        fechaHora,
+        fechaHora: getFechaHoraBogota(),
     };
     yield (0, challenge_model_1.addResult)(result);
 });
